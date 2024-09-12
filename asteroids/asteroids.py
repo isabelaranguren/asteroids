@@ -4,10 +4,10 @@ Shoot space rocks in this demo program created with
 Python and the Arcade library.
 """
 import math 
-import random
 from abc import ABC
 import os
 import arcade
+import secrets
 
 
 # These are Global constants to use throughout the game
@@ -205,9 +205,9 @@ class LargeRock(Asteroid):
     """
     def __init__(self):
         super().__init__("images/meteorGrey_big1.png")
-        self.center.x = random.randint(1, 50)
-        self.center.y = random.randint(1, 150)
-        self.direction = random.randint(1, 50)
+        self.center.x = secrets.SystemRandom().randint(1, 50)
+        self.center.y = secrets.SystemRandom().randint(1, 150)
+        self.direction = secrets.SystemRandom().randint(1, 50)
         self.speed = BIG_ROCK_SPEED
         self.radius = BIG_ROCK_RADIUS
         self.velocity.dx = math.cos(math.radians(self.direction)) * self.speed
